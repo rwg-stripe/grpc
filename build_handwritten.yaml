@@ -215,6 +215,7 @@ defaults:
     LDFLAGS: -g
   zlib:
     CFLAGS: -fvisibility=hidden
+    CPPFLAGS: $(if $(subst Darwin,,$(SYSTEM)),,-DHAVE_UNISTD_H)
 php_config_m4:
   deps:
   - grpc

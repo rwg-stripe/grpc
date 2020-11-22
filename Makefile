@@ -4185,6 +4185,7 @@ PUBLIC_HEADERS_C += \
 LIBZ_OBJS = $(addprefix $(OBJDIR)/$(CONFIG)/, $(addsuffix .o, $(basename $(LIBZ_SRC))))
 
 $(LIBZ_OBJS): CFLAGS += -fvisibility=hidden
+$(LIBZ_OBJS): CPPFLAGS += $(if $(subst Darwin,,$(SYSTEM)),,-DHAVE_UNISTD_H)
 
 $(LIBDIR)/$(CONFIG)/libz.a:  $(LIBZ_OBJS) 
 	$(E) "[AR]      Creating $@"
