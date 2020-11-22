@@ -19,6 +19,7 @@
 #include <ruby/ruby.h>
 
 #include "rb_event_thread.h"
+#include "rb_grpc.h"
 #include "rb_grpc_imports.generated.h"
 
 #include <stdbool.h>
